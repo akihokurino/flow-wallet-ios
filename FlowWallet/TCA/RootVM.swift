@@ -10,7 +10,7 @@ enum RootVM {
         switch action {
         case .startInitialize:
             let defaultAddress = Flow.Address(hex: "f8d6e0586b0a20c7")
-            let defaultPrivateKey = try! P256.Signing.PrivateKey(rawRepresentation: "050ec39cef917b74e01457dd2b37f3c23113355dd483884697cabb0af2d4230d".toBytes()!)
+            let defaultPrivateKey = try! P256.Signing.PrivateKey(rawRepresentation: "94e798c159bcdfc1445087fb587ef589574c3951d7e3e0e0e0dd20c6061bf67c".hexValue)
 
             let getBlock = Future<Flow.Block, AppError> { promise in
                 DispatchQueue.global(qos: .background).async {
@@ -47,8 +47,11 @@ enum RootVM {
                         print("---------------------")
                         print(account.address)
                         print(block.id.hex)
-
+                        
                         let defaultAccountKey = account.keys[0]
+                        print(defaultAccountKey.sequenceNumber)
+                        print(BigInt(defaultAccountKey.sequenceNumber))
+                        
                         let defaultSigner = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
                         let proposalKey = Flow.TransactionProposalKey(
                             address: defaultAddress,
@@ -73,6 +76,8 @@ enum RootVM {
 //                            Flow.Argument.Dictionary(key: .init(value: .string(name)),
 //                                                     value: .init(value: .string(Flow.Script(text: cadence).hex)))
 //                        }
+                        
+                        let args: [Flow.Cadence.FValue] = []
 
                         var unsignedTx = try! flow.buildTransaction {
                             cadence {
@@ -84,23 +89,23 @@ enum RootVM {
                                     }
                                 """
                             }
-                            proposer {
-                                proposalKey
-                            }
                             payer {
                                 defaultAddress
                             }
-                            authorizers {
-                                [defaultAddress]
+                            refBlock {
+                                block.id.hex
                             }
-//                            arguments {
-//                                [.array(pubKeyArg), .dictionary(contractArg)]
-//                            }
+                            proposer {
+                                proposalKey
+                            }
                             gasLimit {
                                 9999
                             }
-                            refBlock {
-                                block.id.hex
+                            authorizers {
+                                defaultAddress
+                            }
+                            arguments {
+                                args
                             }
                         }
 

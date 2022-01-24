@@ -26,33 +26,12 @@ struct ECDSA_P256_Signer: FlowSigner {
 }
 
 extension String {
-    func toBytes() -> [UInt8]? {
-        let length = count
-        if length & 1 != 0 {
-            return nil
+    var hexValue: [UInt8] {
+        var startIndex = self.startIndex
+        return (0 ..< count / 2).compactMap { _ in
+            let endIndex = index(after: startIndex)
+            defer { startIndex = index(after: endIndex) }
+            return UInt8(self[startIndex ... endIndex], radix: 16)
         }
-        var bytes = [UInt8]()
-        bytes.reserveCapacity(length / 2)
-        var index = startIndex
-        for _ in 0..<length / 2 {
-            let nextIndex = self.index(index, offsetBy: 2)
-            if let b = UInt8(self[index..<nextIndex], radix: 16) {
-                bytes.append(b)
-            } else {
-                return nil
-            }
-            index = nextIndex
-        }
-        return bytes
-    }
-}
-
-extension Data {
-    func toHexString() -> String {
-        var hexString = ""
-        for index in 0..<count {
-            hexString += String(format: "%02X", self[index])
-        }
-        return hexString
     }
 }
