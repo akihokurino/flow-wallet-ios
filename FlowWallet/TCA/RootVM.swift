@@ -50,52 +50,52 @@ enum RootVM {
 
                         let defaultAccountKey = account.keys[0]
                         let defaultSigner = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
-
-                        let nextPrivateKey = P256.Signing.PrivateKey()
-
-                        let nextAccountKey = Flow.AccountKey(
-                            publicKey: Flow.PublicKey(data: nextPrivateKey.publicKey.rawRepresentation),
-                            signAlgo: .ECDSA_P256,
-                            hashAlgo: .SHA3_256,
-                            weight: 1000,
-                            sequenceNumber: 0
+                        let proposalKey = Flow.TransactionProposalKey(
+                            address: defaultAddress,
+                            keyIndex: 0,
+                            sequenceNumber: BigInt(defaultAccountKey.sequenceNumber)
                         )
 
-                        let accountKeys = [nextAccountKey]
-                        let contracts: [String: String] = [:]
-                        let pubKeyArg = accountKeys.compactMap { $0.encoded?.hexValue }.compactMap { Flow.Argument(value: .string($0)) }
-                        let contractArg = contracts.compactMap { name, cadence in
-                            Flow.Argument.Dictionary(key: .init(value: .string(name)),
-                                                     value: .init(value: .string(Flow.Script(text: cadence).hex)))
-                        }
+//                        let nextPrivateKey = P256.Signing.PrivateKey()
+//
+//                        let nextAccountKey = Flow.AccountKey(
+//                            publicKey: Flow.PublicKey(data: nextPrivateKey.publicKey.rawRepresentation),
+//                            signAlgo: .ECDSA_P256,
+//                            hashAlgo: .SHA3_256,
+//                            weight: 1000,
+//                            sequenceNumber: 0
+//                        )
+
+//                        let accountKeys = [nextAccountKey]
+//                        let contracts: [String: String] = [:]
+//                        let pubKeyArg = accountKeys.compactMap { $0.encoded?.hexValue }.compactMap { Flow.Argument(value: .string($0)) }
+//                        let contractArg = contracts.compactMap { name, cadence in
+//                            Flow.Argument.Dictionary(key: .init(value: .string(name)),
+//                                                     value: .init(value: .string(Flow.Script(text: cadence).hex)))
+//                        }
 
                         var unsignedTx = try! flow.buildTransaction {
                             cadence {
                                 """
-                                    transaction(publicKeys: [String], contracts: {String: String}) {
-                                        prepare(signer: AuthAccount) {
-                                            let acct = AuthAccount(payer: signer)
-
-                                            for key in publicKeys {
-                                                acct.addPublicKey(key.decodeHex())
-                                            }
-
-                                            for contract in contracts.keys {
-                                                acct.contracts.add(name: contract, code: contracts[contract]!.decodeHex())
-                                            }
+                                    transaction{
+                                        prepare(signer: AuthAccount){
+                                            log("Done!");
                                         }
                                     }
                                 """
                             }
                             proposer {
-                                Flow.TransactionProposalKey(address: defaultAddress, keyIndex: defaultAccountKey.id, sequenceNumber: BigInt(defaultAccountKey.sequenceNumber))
+                                proposalKey
                             }
                             payer {
                                 defaultAddress
                             }
-                            arguments {
-                                [.array(pubKeyArg), .dictionary(contractArg)]
+                            authorizers {
+                                [defaultAddress]
                             }
+//                            arguments {
+//                                [.array(pubKeyArg), .dictionary(contractArg)]
+//                            }
                             gasLimit {
                                 9999
                             }

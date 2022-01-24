@@ -44,8 +44,13 @@ enum HomeVM {
 
             let address = state.address
             let task = Future<String, AppError> { promise in
-                DispatchQueue.global(qos: .background).async {
-                    promise(.success(""))
+                flow.accessAPI.getAccountAtLatestBlock(address: address).whenComplete { result in
+                    switch result {
+                    case .success(let account):
+                        promise(.success("\(account!.balance)"))
+                    case .failure(let error):
+                        promise(.failure(AppError.plain(error.localizedDescription)))
+                    }
                 }
             }
 
@@ -67,27 +72,6 @@ enum HomeVM {
         case .shouldPullToRefresh(let val):
             state.shouldPullToRefresh = val
             return .none
-        case .startSendTransaction:
-            state.shouldShowHUD = true
-
-            let address = state.address
-            let task = Future<String, AppError> { promise in
-                DispatchQueue.global(qos: .background).async {
-                    promise(.success(""))
-                }
-            }
-
-            return task
-                .subscribe(on: environment.backgroundQueue)
-                .receive(on: environment.mainQueue)
-                .catchToEffect()
-                .map(HomeVM.Action.endSendTransaction)
-        case .endSendTransaction(.success(let txhash)):
-            state.shouldShowHUD = false
-            return .none
-        case .endSendTransaction(.failure(let err)):
-            state.shouldShowHUD = false
-            return .none
         }
     }
 }
@@ -100,8 +84,6 @@ extension HomeVM {
         case endRefresh(Result<String, AppError>)
         case shouldShowHUD(Bool)
         case shouldPullToRefresh(Bool)
-        case startSendTransaction
-        case endSendTransaction(Result<String, AppError>)
     }
 
     struct State: Equatable {

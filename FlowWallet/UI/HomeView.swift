@@ -33,20 +33,6 @@ struct HomeView: View {
                 .background(Color.black)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets())
-
-                Spacer().frame(height: 30)
-
-                VStack {
-                    Text("取引作成")
-                    Spacer().frame(height: 10)
-                    ActionButton(text: "送信", background: .primary) {
-                        viewStore.send(.startSendTransaction)
-                    }
-                }
-                .padding()
-                .background(Color.black)
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
             }
             .listStyle(PlainListStyle())
             .navigationBarTitle("ホーム", displayMode: .inline)
