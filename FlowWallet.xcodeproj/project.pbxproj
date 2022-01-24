@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02577277279E50A7007DE0F7 /* Flow in Frameworks */ = {isa = PBXBuildFile; productRef = 02577276279E50A7007DE0F7 /* Flow */; };
+		027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95C8279D317E0086A19B /* FlowWalletApp.swift */; };
+		027F95CD279D317F0086A19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027F95CC279D317F0086A19B /* Assets.xcassets */; };
+		027F95D0279D317F0086A19B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027F95CF279D317F0086A19B /* Preview Assets.xcassets */; };
+		027F95DB279D355F0086A19B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95DA279D355F0086A19B /* ComposableArchitecture */; };
+		027F95DE279D35D80086A19B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95DD279D35D80086A19B /* RootView.swift */; };
+		027F95E0279D35E50086A19B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95DF279D35E50086A19B /* HomeView.swift */; };
+		027F95E2279D35EF0086A19B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E1279D35EF0086A19B /* HistoryView.swift */; };
+		027F95E5279D36180086A19B /* RootVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E4279D36180086A19B /* RootVM.swift */; };
+		027F95E7279D36220086A19B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E6279D36220086A19B /* HomeVM.swift */; };
+		027F95E9279D362C0086A19B /* HistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E8279D362C0086A19B /* HistoryVM.swift */; };
+		027F95EB279D36420086A19B /* Navigation+TCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95EA279D36420086A19B /* Navigation+TCA.swift */; };
+		027F95EE279D367C0086A19B /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95ED279D367C0086A19B /* SwiftUIRefresh */; };
+		027F95F1279D36A30086A19B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F0279D36A30086A19B /* HUD.swift */; };
+		027F95F4279D36CE0086A19B /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95F3279D36CE0086A19B /* ActivityIndicatorView */; };
+		027F95F6279D36E30086A19B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F5279D36E30086A19B /* TextField.swift */; };
+		027F95F8279D36FB0086A19B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F7279D36FB0086A19B /* Button.swift */; };
+		027F95FA279D373C0086A19B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F9279D373C0086A19B /* Error.swift */; };
+		027F9600279D91DB0086A19B /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95FF279D91DB0086A19B /* Signer.swift */; };
+		027F9602279DAA9F0086A19B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F9601279DAA9F0086A19B /* DataStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02272EAF279E4E86004BFFA6 /* flow-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "flow-swift"; path = "../flow-swift"; sourceTree = "<group>"; };
+		027F95C5279D317E0086A19B /* FlowWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		027F95C8279D317E0086A19B /* FlowWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowWalletApp.swift; sourceTree = "<group>"; };
+		027F95CC279D317F0086A19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		027F95CF279D317F0086A19B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		027F95DD279D35D80086A19B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		027F95DF279D35E50086A19B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		027F95E1279D35EF0086A19B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		027F95E4279D36180086A19B /* RootVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVM.swift; sourceTree = "<group>"; };
+		027F95E6279D36220086A19B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		027F95E8279D362C0086A19B /* HistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVM.swift; sourceTree = "<group>"; };
+		027F95EA279D36420086A19B /* Navigation+TCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+TCA.swift"; sourceTree = "<group>"; };
+		027F95F0279D36A30086A19B /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		027F95F5279D36E30086A19B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		027F95F7279D36FB0086A19B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		027F95F9279D373C0086A19B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		027F95FF279D91DB0086A19B /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
+		027F9601279DAA9F0086A19B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		027F95C2279D317E0086A19B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02577277279E50A7007DE0F7 /* Flow in Frameworks */,
+				027F95EE279D367C0086A19B /* SwiftUIRefresh in Frameworks */,
+				027F95DB279D355F0086A19B /* ComposableArchitecture in Frameworks */,
+				027F95F4279D36CE0086A19B /* ActivityIndicatorView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		02272EAE279E4E86004BFFA6 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				02272EAF279E4E86004BFFA6 /* flow-swift */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		02577275279E50A7007DE0F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		027F95BC279D317D0086A19B = {
+			isa = PBXGroup;
+			children = (
+				02272EAE279E4E86004BFFA6 /* Packages */,
+				027F95C7279D317E0086A19B /* FlowWallet */,
+				027F95C6279D317E0086A19B /* Products */,
+				02577275279E50A7007DE0F7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		027F95C6279D317E0086A19B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				027F95C5279D317E0086A19B /* FlowWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		027F95C7279D317E0086A19B /* FlowWallet */ = {
+			isa = PBXGroup;
+			children = (
+				027F95FE279D91CB0086A19B /* Infra */,
+				027F95E3279D36030086A19B /* TCA */,
+				027F95DC279D35C20086A19B /* UI */,
+				027F95C8279D317E0086A19B /* FlowWalletApp.swift */,
+				027F95CC279D317F0086A19B /* Assets.xcassets */,
+				027F95CE279D317F0086A19B /* Preview Content */,
+			);
+			path = FlowWallet;
+			sourceTree = "<group>";
+		};
+		027F95CE279D317F0086A19B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				027F95CF279D317F0086A19B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		027F95DC279D35C20086A19B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				027F95EF279D368F0086A19B /* Component */,
+				027F95DD279D35D80086A19B /* RootView.swift */,
+				027F95DF279D35E50086A19B /* HomeView.swift */,
+				027F95E1279D35EF0086A19B /* HistoryView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		027F95E3279D36030086A19B /* TCA */ = {
+			isa = PBXGroup;
+			children = (
+				027F95EA279D36420086A19B /* Navigation+TCA.swift */,
+				027F95F9279D373C0086A19B /* Error.swift */,
+				027F95E4279D36180086A19B /* RootVM.swift */,
+				027F95E6279D36220086A19B /* HomeVM.swift */,
+				027F95E8279D362C0086A19B /* HistoryVM.swift */,
+			);
+			path = TCA;
+			sourceTree = "<group>";
+		};
+		027F95EF279D368F0086A19B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				027F95F0279D36A30086A19B /* HUD.swift */,
+				027F95F5279D36E30086A19B /* TextField.swift */,
+				027F95F7279D36FB0086A19B /* Button.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		027F95FE279D91CB0086A19B /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				027F95FF279D91DB0086A19B /* Signer.swift */,
+				027F9601279DAA9F0086A19B /* DataStore.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		027F95C4279D317E0086A19B /* FlowWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 027F95D3279D317F0086A19B /* Build configuration list for PBXNativeTarget "FlowWallet" */;
+			buildPhases = (
+				027F95C1279D317E0086A19B /* Sources */,
+				027F95C2279D317E0086A19B /* Frameworks */,
+				027F95C3279D317E0086A19B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowWallet;
+			packageProductDependencies = (
+				027F95DA279D355F0086A19B /* ComposableArchitecture */,
+				027F95ED279D367C0086A19B /* SwiftUIRefresh */,
+				027F95F3279D36CE0086A19B /* ActivityIndicatorView */,
+				02577276279E50A7007DE0F7 /* Flow */,
+			);
+			productName = FlowWallet;
+			productReference = 027F95C5279D317E0086A19B /* FlowWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		027F95BD279D317D0086A19B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					027F95C4279D317E0086A19B = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 027F95C0279D317D0086A19B /* Build configuration list for PBXProject "FlowWallet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 027F95BC279D317D0086A19B;
+			packageReferences = (
+				027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
+				027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+			);
+			productRefGroup = 027F95C6279D317E0086A19B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				027F95C4279D317E0086A19B /* FlowWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		027F95C3279D317E0086A19B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027F95D0279D317F0086A19B /* Preview Assets.xcassets in Resources */,
+				027F95CD279D317F0086A19B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		027F95C1279D317E0086A19B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027F95E5279D36180086A19B /* RootVM.swift in Sources */,
+				027F9600279D91DB0086A19B /* Signer.swift in Sources */,
+				027F95F6279D36E30086A19B /* TextField.swift in Sources */,
+				027F95F1279D36A30086A19B /* HUD.swift in Sources */,
+				027F95FA279D373C0086A19B /* Error.swift in Sources */,
+				027F95E7279D36220086A19B /* HomeVM.swift in Sources */,
+				027F95EB279D36420086A19B /* Navigation+TCA.swift in Sources */,
+				027F9602279DAA9F0086A19B /* DataStore.swift in Sources */,
+				027F95E2279D35EF0086A19B /* HistoryView.swift in Sources */,
+				027F95F8279D36FB0086A19B /* Button.swift in Sources */,
+				027F95E0279D35E50086A19B /* HomeView.swift in Sources */,
+				027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */,
+				027F95DE279D35D80086A19B /* RootView.swift in Sources */,
+				027F95E9279D362C0086A19B /* HistoryVM.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		027F95D1279D317F0086A19B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		027F95D2279D317F0086A19B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		027F95D4279D317F0086A19B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FlowWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = 39KF2M8S75;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.akiho.flow-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		027F95D5279D317F0086A19B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FlowWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = 39KF2M8S75;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.akiho.flow-wallet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		027F95C0279D317D0086A19B /* Build configuration list for PBXProject "FlowWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027F95D1279D317F0086A19B /* Debug */,
+				027F95D2279D317F0086A19B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		027F95D3279D317F0086A19B /* Build configuration list for PBXNativeTarget "FlowWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				027F95D4279D317F0086A19B /* Debug */,
+				027F95D5279D317F0086A19B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		02577276279E50A7007DE0F7 /* Flow */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Flow;
+		};
+		027F95DA279D355F0086A19B /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		027F95ED279D367C0086A19B /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
+		027F95F3279D36CE0086A19B /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 027F95BD279D317D0086A19B /* Project object */;
+}
