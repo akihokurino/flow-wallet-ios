@@ -30,7 +30,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02272EAF279E4E86004BFFA6 /* flow-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "flow-swift"; path = "../flow-swift"; sourceTree = "<group>"; };
 		027F95C5279D317E0086A19B /* FlowWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027F95C8279D317E0086A19B /* FlowWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowWalletApp.swift; sourceTree = "<group>"; };
 		027F95CC279D317F0086A19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 		027F95F9279D373C0086A19B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		027F95FF279D91DB0086A19B /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
 		027F9601279DAA9F0086A19B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		029ADCAB279F0A3C00C78863 /* flow-swift-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "flow-swift-sdk"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 		02272EAE279E4E86004BFFA6 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				02272EAF279E4E86004BFFA6 /* flow-swift */,
+				029ADCAB279F0A3C00C78863 /* flow-swift-sdk */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
