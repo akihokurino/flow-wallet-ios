@@ -1,4 +1,5 @@
 import CryptoKit
+import CryptoSwift
 import Flow
 import Foundation
 
@@ -7,7 +8,6 @@ struct ECDSA_P256_Signer: FlowSigner {
     var keyIndex: Int
     var hash: Flow.HashAlgorithm = .SHA3_256
     var signature: Flow.SignatureAlgorithm = .ECDSA_P256
-
     var privateKey: P256.Signing.PrivateKey
 
     init(address: Flow.Address, keyIndex: Int, privateKey: P256.Signing.PrivateKey) {
@@ -18,10 +18,23 @@ struct ECDSA_P256_Signer: FlowSigner {
 
     func sign(signableData: Data) throws -> Data {
         do {
-            return try privateKey.signature(for: signableData).rawRepresentation
+            let sha3 = CryptoSwift.SHA3(variant: SHA3.Variant.sha256)
+            let hashData = Data(sha3.calculate(for: signableData.bytes))
+            return try sign_P256(hashData)
         } catch {
             throw error
         }
+    }
+
+    func sign_P256(_ hash: Data) throws -> Data {
+        var fakeDigest = SHA256.hash(data: Data("42".bytes))
+        withUnsafeMutableBytes(of: &fakeDigest) { pointerBuffer in
+            for i in 0 ..< pointerBuffer.count {
+                pointerBuffer[i] = hash.bytes[i]
+            }
+        }
+        let signature = try privateKey.signature(for: fakeDigest)
+        return signature.rawRepresentation
     }
 }
 
@@ -33,5 +46,29 @@ extension String {
             defer { startIndex = index(after: endIndex) }
             return UInt8(self[startIndex ... endIndex], radix: 16)
         }
+    }
+}
+
+extension Data {
+    var bytes: [UInt8] {
+        return [UInt8](self)
+    }
+
+    func hexString(prefixed isPrefixed: Bool = false) -> String {
+        return self.bytes.reduce(isPrefixed ? "0x" : "") { $0 + String(format: "%02X", $1).lowercased() }
+    }
+
+    public mutating func padLeftZero(_ count: Int) -> Data {
+        while self.count<count {
+            self.insert(0, at: 0)
+        }
+        return self
+    }
+
+    public mutating func padRightZero(_ count: Int) -> Data {
+        while self.count<count {
+            self.append(0)
+        }
+        return self
     }
 }

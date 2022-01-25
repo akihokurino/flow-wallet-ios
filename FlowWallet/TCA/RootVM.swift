@@ -9,7 +9,7 @@ enum RootVM {
     static let reducer = Reducer<State, Action, Environment> { state, action, environment in
         switch action {
         case .startInitialize:
-            let defaultAddress = Flow.Address(hex: "f8d6e0586b0a20c7")
+            let defaultAddress = Flow.Address(hex: "0xf8d6e0586b0a20c7")
             let defaultPrivateKey = try! P256.Signing.PrivateKey(rawRepresentation: "94e798c159bcdfc1445087fb587ef589574c3951d7e3e0e0e0dd20c6061bf67c".hexValue)
 
             let getBlock = Future<Flow.Block, AppError> { promise in
@@ -44,73 +44,43 @@ enum RootVM {
             .flatMap { account, block in
                 Future<Flow.Address, AppError> { promise in
                     DispatchQueue.global(qos: .background).async {
-                        print("---------------------")
-                        print(account.address)
-                        print(block.id.hex)
-                        
                         let defaultAccountKey = account.keys[0]
-                        print(defaultAccountKey.sequenceNumber)
-                        print(BigInt(defaultAccountKey.sequenceNumber))
                         
-                        let defaultSigner = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
-                        let proposalKey = Flow.TransactionProposalKey(
-                            address: defaultAddress,
-                            keyIndex: 0,
-                            sequenceNumber: BigInt(defaultAccountKey.sequenceNumber)
-                        )
-
-//                        let nextPrivateKey = P256.Signing.PrivateKey()
-//
-//                        let nextAccountKey = Flow.AccountKey(
-//                            publicKey: Flow.PublicKey(data: nextPrivateKey.publicKey.rawRepresentation),
-//                            signAlgo: .ECDSA_P256,
-//                            hashAlgo: .SHA3_256,
-//                            weight: 1000,
-//                            sequenceNumber: 0
-//                        )
-
-//                        let accountKeys = [nextAccountKey]
-//                        let contracts: [String: String] = [:]
-//                        let pubKeyArg = accountKeys.compactMap { $0.encoded?.hexValue }.compactMap { Flow.Argument(value: .string($0)) }
-//                        let contractArg = contracts.compactMap { name, cadence in
-//                            Flow.Argument.Dictionary(key: .init(value: .string(name)),
-//                                                     value: .init(value: .string(Flow.Script(text: cadence).hex)))
-//                        }
-                        
-                        let args: [Flow.Cadence.FValue] = []
+                        let code = """
+                        transaction {
+                            prepare(signer: AuthAccount) {
+                                log("Done!");
+                            }
+                        }
+                        """
 
                         var unsignedTx = try! flow.buildTransaction {
                             cadence {
-                                """
-                                    transaction{
-                                        prepare(signer: AuthAccount){
-                                            log("Done!");
-                                        }
-                                    }
-                                """
+                                code
+                            }
+                            proposer {
+                                Flow.TransactionProposalKey(
+                                    address: defaultAddress,
+                                    keyIndex: defaultAccountKey.id,
+                                    sequenceNumber: BigInt(defaultAccountKey.sequenceNumber)
+                                )
                             }
                             payer {
                                 defaultAddress
                             }
-                            refBlock {
-                                block.id.hex
-                            }
-                            proposer {
-                                proposalKey
+                            authorizers {
+                                defaultAddress
                             }
                             gasLimit {
                                 9999
                             }
-                            authorizers {
-                                defaultAddress
-                            }
-                            arguments {
-                                args
+                            refBlock {
+                                block.id
                             }
                         }
-
-                        let signedTx = try! unsignedTx.signEnvelope(signers: [defaultSigner])
-
+                        
+                        let signer = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
+                        let signedTx = try! unsignedTx.signEnvelope(signers: [signer])
                         try! flow.sendTransaction(signedTransaction: signedTx).whenComplete { result in
                             switch result {
                             case .success(let account):

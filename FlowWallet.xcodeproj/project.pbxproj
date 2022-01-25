@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023B093427A0553100F673F3 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 023B093327A0553100F673F3 /* CryptoSwift */; };
 		02577277279E50A7007DE0F7 /* Flow in Frameworks */ = {isa = PBXBuildFile; productRef = 02577276279E50A7007DE0F7 /* Flow */; };
 		027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95C8279D317E0086A19B /* FlowWalletApp.swift */; };
 		027F95CD279D317F0086A19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027F95CC279D317F0086A19B /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 				02577277279E50A7007DE0F7 /* Flow in Frameworks */,
 				027F95EE279D367C0086A19B /* SwiftUIRefresh in Frameworks */,
 				027F95DB279D355F0086A19B /* ComposableArchitecture in Frameworks */,
+				023B093427A0553100F673F3 /* CryptoSwift in Frameworks */,
 				027F95F4279D36CE0086A19B /* ActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +184,7 @@
 				027F95ED279D367C0086A19B /* SwiftUIRefresh */,
 				027F95F3279D36CE0086A19B /* ActivityIndicatorView */,
 				02577276279E50A7007DE0F7 /* Flow */,
+				023B093327A0553100F673F3 /* CryptoSwift */,
 			);
 			productName = FlowWallet;
 			productReference = 027F95C5279D317E0086A19B /* FlowWallet.app */;
@@ -215,6 +218,7 @@
 				027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 				027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+				023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = 027F95C6279D317E0086A19B /* Products */;
 			projectDirPath = "";
@@ -462,6 +466,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -489,6 +501,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		023B093327A0553100F673F3 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
 		02577276279E50A7007DE0F7 /* Flow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Flow;
