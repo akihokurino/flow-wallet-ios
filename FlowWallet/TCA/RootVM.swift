@@ -45,11 +45,26 @@ enum RootVM {
                 Future<Flow.Address, AppError> { promise in
                     DispatchQueue.global(qos: .background).async {
                         let defaultAccountKey = account.keys[0]
-                        
+
+                        let newPrivateKey = P256.Signing.PrivateKey()
+                        let newAccountKey = Flow.AccountKey(
+                            publicKey: Flow.PublicKey(data: newPrivateKey.publicKey.rawRepresentation),
+                            signAlgo: .ECDSA_P256,
+                            hashAlgo: .SHA3_256,
+                            weight: 1000
+                        )
+
+                        let pubKeyArg = [newAccountKey]
+                            .compactMap { $0.encoded?.hexValue }
+                            .compactMap { Flow.Argument(value: .string($0)) }
+
                         let code = """
-                        transaction {
+                        transaction(publicKeys: [String]) {
                             prepare(signer: AuthAccount) {
-                                log("Done!");
+                                let acct = AuthAccount(payer: signer)
+                                for key in publicKeys {
+                                    acct.addPublicKey(key.decodeHex())
+                                }
                             }
                         }
                         """
@@ -57,6 +72,9 @@ enum RootVM {
                         var unsignedTx = try! flow.buildTransaction {
                             cadence {
                                 code
+                            }
+                            arguments {
+                                [.array(pubKeyArg)]
                             }
                             proposer {
                                 Flow.TransactionProposalKey(
@@ -78,12 +96,12 @@ enum RootVM {
                                 block.id
                             }
                         }
-                        
+
                         let signer = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
                         let signedTx = try! unsignedTx.signEnvelope(signers: [signer])
                         try! flow.sendTransaction(signedTransaction: signedTx).whenComplete { result in
                             switch result {
-                            case .success(let account):
+                            case .success(let id):
                                 promise(.success(Flow.Address(hex: "f8d6e0586b0a20c7")))
                             case .failure(let error):
                                 promise(.failure(AppError.plain(error.localizedDescription)))
