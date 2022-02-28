@@ -6,7 +6,7 @@
 - flow ( https://ja.onflow.org/ )
 - flow-swift ( https://github.com/zed-io/flow-swift )
 
-## Dones
+## Done
 
 - generate private key
 - get balance of flow
