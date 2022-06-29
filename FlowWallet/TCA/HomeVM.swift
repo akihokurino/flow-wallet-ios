@@ -16,11 +16,11 @@ enum HomeVM {
 
             let address = state.address
             let task = Future<String, AppError> { promise in
-                flow.accessAPI.getAccountAtLatestBlock(address: address).whenComplete { result in
-                    switch result {
-                    case .success(let account):
-                        promise(.success("\(account!.balance)"))
-                    case .failure(let error):
+                Task.detached {
+                    do {
+                        let account = try await flow.accessAPI.getAccountAtLatestBlock(address: address)
+                        promise(.success("\(account.balance)"))
+                    } catch {
                         promise(.failure(AppError.plain(error.localizedDescription)))
                     }
                 }
@@ -44,11 +44,11 @@ enum HomeVM {
 
             let address = state.address
             let task = Future<String, AppError> { promise in
-                flow.accessAPI.getAccountAtLatestBlock(address: address).whenComplete { result in
-                    switch result {
-                    case .success(let account):
-                        promise(.success("\(account!.balance)"))
-                    case .failure(let error):
+                Task.detached {
+                    do {
+                        let account = try await flow.accessAPI.getAccountAtLatestBlock(address: address)
+                        promise(.success("\(account.balance)"))
+                    } catch {
                         promise(.failure(AppError.plain(error.localizedDescription)))
                     }
                 }

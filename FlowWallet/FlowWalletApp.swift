@@ -24,10 +24,10 @@ struct FlowWalletApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        let endpoint = Flow.ChainID.Endpoint(node: "127.0.0.1", port: 3569)
-        let chainID = Flow.ChainID.custom(name: "LocalHost", endpoint: endpoint)
+        let transport = Flow.Transport.HTTP(URL(string: "http://localhost:8888")!)
+        let chainID = Flow.ChainID.custom(name: "LocalHost", transport: transport)
         flow.configure(chainID: chainID)
-
+        
         return true
     }
 }

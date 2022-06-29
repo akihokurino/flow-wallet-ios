@@ -22,22 +22,6 @@ struct RootView: View {
                         Text("ホーム")
                     }
                 }.tag(1)
-
-                NavigationView {
-                    IfLetStore(
-                        store.scope(
-                            state: { $0.historyView },
-                            action: RootVM.Action.historyView
-                        ),
-                        then: HistoryView.init(store:)
-                    )
-                }
-                .tabItem {
-                    VStack {
-                        Image(systemName: "clock")
-                        Text("履歴")
-                    }
-                }.tag(2)
             }
             .onAppear {
                 viewStore.send(.startInitialize)

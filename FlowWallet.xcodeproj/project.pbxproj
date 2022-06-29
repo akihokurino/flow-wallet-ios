@@ -7,40 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023B093427A0553100F673F3 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 023B093327A0553100F673F3 /* CryptoSwift */; };
-		02577277279E50A7007DE0F7 /* Flow in Frameworks */ = {isa = PBXBuildFile; productRef = 02577276279E50A7007DE0F7 /* Flow */; };
+		0224DDD4286C9D3B00EFC744 /* Flow in Frameworks */ = {isa = PBXBuildFile; productRef = 0224DDD3286C9D3B00EFC744 /* Flow */; };
 		027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95C8279D317E0086A19B /* FlowWalletApp.swift */; };
 		027F95CD279D317F0086A19B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027F95CC279D317F0086A19B /* Assets.xcassets */; };
 		027F95D0279D317F0086A19B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027F95CF279D317F0086A19B /* Preview Assets.xcassets */; };
 		027F95DB279D355F0086A19B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95DA279D355F0086A19B /* ComposableArchitecture */; };
 		027F95DE279D35D80086A19B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95DD279D35D80086A19B /* RootView.swift */; };
 		027F95E0279D35E50086A19B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95DF279D35E50086A19B /* HomeView.swift */; };
-		027F95E2279D35EF0086A19B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E1279D35EF0086A19B /* HistoryView.swift */; };
 		027F95E5279D36180086A19B /* RootVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E4279D36180086A19B /* RootVM.swift */; };
 		027F95E7279D36220086A19B /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E6279D36220086A19B /* HomeVM.swift */; };
-		027F95E9279D362C0086A19B /* HistoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95E8279D362C0086A19B /* HistoryVM.swift */; };
 		027F95EB279D36420086A19B /* Navigation+TCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95EA279D36420086A19B /* Navigation+TCA.swift */; };
 		027F95EE279D367C0086A19B /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95ED279D367C0086A19B /* SwiftUIRefresh */; };
 		027F95F1279D36A30086A19B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F0279D36A30086A19B /* HUD.swift */; };
-		027F95F4279D36CE0086A19B /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 027F95F3279D36CE0086A19B /* ActivityIndicatorView */; };
 		027F95F6279D36E30086A19B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F5279D36E30086A19B /* TextField.swift */; };
 		027F95F8279D36FB0086A19B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F7279D36FB0086A19B /* Button.swift */; };
 		027F95FA279D373C0086A19B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F9279D373C0086A19B /* Error.swift */; };
 		027F9600279D91DB0086A19B /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95FF279D91DB0086A19B /* Signer.swift */; };
 		027F9602279DAA9F0086A19B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F9601279DAA9F0086A19B /* DataStore.swift */; };
+		02A8F229286C953200E81178 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 02A8F228286C953200E81178 /* ActivityIndicatorView */; };
+		02A8F22C286C954100E81178 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02A8F22B286C954100E81178 /* CryptoSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		027F95C5279D317E0086A19B /* FlowWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0224DDD2286C9D2500EFC744 /* flow-swift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "flow-swift"; sourceTree = "<group>"; };
+		027F95C5279D317E0086A19B /* フローウォレット.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "フローウォレット.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		027F95C8279D317E0086A19B /* FlowWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowWalletApp.swift; sourceTree = "<group>"; };
 		027F95CC279D317F0086A19B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027F95CF279D317F0086A19B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		027F95DD279D35D80086A19B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		027F95DF279D35E50086A19B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		027F95E1279D35EF0086A19B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		027F95E4279D36180086A19B /* RootVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVM.swift; sourceTree = "<group>"; };
 		027F95E6279D36220086A19B /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
-		027F95E8279D362C0086A19B /* HistoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVM.swift; sourceTree = "<group>"; };
 		027F95EA279D36420086A19B /* Navigation+TCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+TCA.swift"; sourceTree = "<group>"; };
 		027F95F0279D36A30086A19B /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		027F95F5279D36E30086A19B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -48,7 +45,6 @@
 		027F95F9279D373C0086A19B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		027F95FF279D91DB0086A19B /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
 		027F9601279DAA9F0086A19B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		029ADCAB279F0A3C00C78863 /* flow-swift-sdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "flow-swift-sdk"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,21 +52,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02577277279E50A7007DE0F7 /* Flow in Frameworks */,
 				027F95EE279D367C0086A19B /* SwiftUIRefresh in Frameworks */,
+				0224DDD4286C9D3B00EFC744 /* Flow in Frameworks */,
+				02A8F229286C953200E81178 /* ActivityIndicatorView in Frameworks */,
+				02A8F22C286C954100E81178 /* CryptoSwift in Frameworks */,
 				027F95DB279D355F0086A19B /* ComposableArchitecture in Frameworks */,
-				023B093427A0553100F673F3 /* CryptoSwift in Frameworks */,
-				027F95F4279D36CE0086A19B /* ActivityIndicatorView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02272EAE279E4E86004BFFA6 /* Packages */ = {
+		0224DDD1286C9D2500EFC744 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				029ADCAB279F0A3C00C78863 /* flow-swift-sdk */,
+				0224DDD2286C9D2500EFC744 /* flow-swift */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -82,10 +78,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		027D26AA286CABF5004FC4B5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				027F95EA279D36420086A19B /* Navigation+TCA.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		027F95BC279D317D0086A19B = {
 			isa = PBXGroup;
 			children = (
-				02272EAE279E4E86004BFFA6 /* Packages */,
+				0224DDD1286C9D2500EFC744 /* Packages */,
 				027F95C7279D317E0086A19B /* FlowWallet */,
 				027F95C6279D317E0086A19B /* Products */,
 				02577275279E50A7007DE0F7 /* Frameworks */,
@@ -95,7 +99,7 @@
 		027F95C6279D317E0086A19B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				027F95C5279D317E0086A19B /* FlowWallet.app */,
+				027F95C5279D317E0086A19B /* フローウォレット.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,7 +131,6 @@
 				027F95EF279D368F0086A19B /* Component */,
 				027F95DD279D35D80086A19B /* RootView.swift */,
 				027F95DF279D35E50086A19B /* HomeView.swift */,
-				027F95E1279D35EF0086A19B /* HistoryView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -135,11 +138,10 @@
 		027F95E3279D36030086A19B /* TCA */ = {
 			isa = PBXGroup;
 			children = (
-				027F95EA279D36420086A19B /* Navigation+TCA.swift */,
+				027D26AA286CABF5004FC4B5 /* Extension */,
 				027F95F9279D373C0086A19B /* Error.swift */,
 				027F95E4279D36180086A19B /* RootVM.swift */,
 				027F95E6279D36220086A19B /* HomeVM.swift */,
-				027F95E8279D362C0086A19B /* HistoryVM.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -182,12 +184,12 @@
 			packageProductDependencies = (
 				027F95DA279D355F0086A19B /* ComposableArchitecture */,
 				027F95ED279D367C0086A19B /* SwiftUIRefresh */,
-				027F95F3279D36CE0086A19B /* ActivityIndicatorView */,
-				02577276279E50A7007DE0F7 /* Flow */,
-				023B093327A0553100F673F3 /* CryptoSwift */,
+				02A8F228286C953200E81178 /* ActivityIndicatorView */,
+				02A8F22B286C954100E81178 /* CryptoSwift */,
+				0224DDD3286C9D3B00EFC744 /* Flow */,
 			);
 			productName = FlowWallet;
-			productReference = 027F95C5279D317E0086A19B /* FlowWallet.app */;
+			productReference = 027F95C5279D317E0086A19B /* フローウォレット.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -217,8 +219,8 @@
 			packageReferences = (
 				027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
-				027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
-				023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				02A8F227286C953200E81178 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+				02A8F22A286C954100E81178 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = 027F95C6279D317E0086A19B /* Products */;
 			projectDirPath = "";
@@ -254,12 +256,10 @@
 				027F95E7279D36220086A19B /* HomeVM.swift in Sources */,
 				027F95EB279D36420086A19B /* Navigation+TCA.swift in Sources */,
 				027F9602279DAA9F0086A19B /* DataStore.swift in Sources */,
-				027F95E2279D35EF0086A19B /* HistoryView.swift in Sources */,
 				027F95F8279D36FB0086A19B /* Button.swift in Sources */,
 				027F95E0279D35E50086A19B /* HomeView.swift in Sources */,
 				027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */,
 				027F95DE279D35D80086A19B /* RootView.swift in Sources */,
-				027F95E9279D362C0086A19B /* HistoryVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +405,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.akiho.flow-wallet";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "フローウォレット";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -435,7 +435,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "app.akiho.flow-wallet";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "フローウォレット";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -466,14 +466,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		027F95D9279D355F0086A19B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -490,23 +482,26 @@
 				kind = branch;
 			};
 		};
-		027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+		02A8F227286C953200E81178 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = master;
+				kind = branch;
+			};
+		};
+		02A8F22A286C954100E81178 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		023B093327A0553100F673F3 /* CryptoSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 023B093227A0553100F673F3 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
-			productName = CryptoSwift;
-		};
-		02577276279E50A7007DE0F7 /* Flow */ = {
+		0224DDD3286C9D3B00EFC744 /* Flow */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Flow;
 		};
@@ -520,10 +515,15 @@
 			package = 027F95EC279D367C0086A19B /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
 			productName = SwiftUIRefresh;
 		};
-		027F95F3279D36CE0086A19B /* ActivityIndicatorView */ = {
+		02A8F228286C953200E81178 /* ActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 027F95F2279D36CE0086A19B /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			package = 02A8F227286C953200E81178 /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
 			productName = ActivityIndicatorView;
+		};
+		02A8F22B286C954100E81178 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 02A8F22A286C954100E81178 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
