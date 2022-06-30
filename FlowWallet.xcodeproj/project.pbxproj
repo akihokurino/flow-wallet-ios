@@ -23,9 +23,9 @@
 		027F95F8279D36FB0086A19B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F7279D36FB0086A19B /* Button.swift */; };
 		027F95FA279D373C0086A19B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95F9279D373C0086A19B /* Error.swift */; };
 		027F9600279D91DB0086A19B /* Signer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F95FF279D91DB0086A19B /* Signer.swift */; };
-		027F9602279DAA9F0086A19B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F9601279DAA9F0086A19B /* DataStore.swift */; };
 		02A8F229286C953200E81178 /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 02A8F228286C953200E81178 /* ActivityIndicatorView */; };
 		02A8F22C286C954100E81178 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02A8F22B286C954100E81178 /* CryptoSwift */; };
+		02B7C070286DF1FB00C30819 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B7C06F286DF1FB00C30819 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 		027F95F7279D36FB0086A19B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		027F95F9279D373C0086A19B /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		027F95FF279D91DB0086A19B /* Signer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signer.swift; sourceTree = "<group>"; };
-		027F9601279DAA9F0086A19B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		02B7C06F286DF1FB00C30819 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,7 @@
 				027F95E3279D36030086A19B /* TCA */,
 				027F95DC279D35C20086A19B /* UI */,
 				027F95C8279D317E0086A19B /* FlowWalletApp.swift */,
+				02B7C06F286DF1FB00C30819 /* Environment.swift */,
 				027F95CC279D317F0086A19B /* Assets.xcassets */,
 				027F95CE279D317F0086A19B /* Preview Content */,
 			);
@@ -160,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				027F95FF279D91DB0086A19B /* Signer.swift */,
-				027F9601279DAA9F0086A19B /* DataStore.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -172,6 +172,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 027F95D3279D317F0086A19B /* Build configuration list for PBXNativeTarget "FlowWallet" */;
 			buildPhases = (
+				02B7C06E286DF1AE00C30819 /* Env */,
 				027F95C1279D317E0086A19B /* Sources */,
 				027F95C2279D317E0086A19B /* Frameworks */,
 				027F95C3279D317E0086A19B /* Resources */,
@@ -243,6 +244,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02B7C06E286DF1AE00C30819 /* Env */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Env;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/build-env.sh\" \"${SRCROOT}/.env\" \"${SRCROOT}/${PROJECT}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		027F95C1279D317E0086A19B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,7 +277,7 @@
 				027F95FA279D373C0086A19B /* Error.swift in Sources */,
 				027F95E7279D36220086A19B /* HomeVM.swift in Sources */,
 				027F95EB279D36420086A19B /* Navigation+TCA.swift in Sources */,
-				027F9602279DAA9F0086A19B /* DataStore.swift in Sources */,
+				02B7C070286DF1FB00C30819 /* Environment.swift in Sources */,
 				027F95F8279D36FB0086A19B /* Button.swift in Sources */,
 				027F95E0279D35E50086A19B /* HomeView.swift in Sources */,
 				027F95C9279D317E0086A19B /* FlowWalletApp.swift in Sources */,

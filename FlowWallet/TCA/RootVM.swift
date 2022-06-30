@@ -9,8 +9,8 @@ enum RootVM {
     static let reducer = Reducer<State, Action, Environment> { state, action, environment in
         switch action {
         case .startInitialize:
-            let defaultAddress = Flow.Address(hex: "0xf8d6e0586b0a20c7")
-            let defaultPrivateKey = try! P256.Signing.PrivateKey(rawRepresentation: "94e798c159bcdfc1445087fb587ef589574c3951d7e3e0e0e0dd20c6061bf67c".hexValue)
+            let defaultAddress = Flow.Address(hex: Env["WALLET_ADDRESS"]!)
+            let defaultPrivateKey = try! P256.Signing.PrivateKey(rawRepresentation: Env["WALLET_SECRET"]!.hexValue)
 
             let getBlock = Future<Flow.Block, AppError> { promise in
                 Task.detached {
@@ -96,9 +96,9 @@ enum RootVM {
 
                             let signer = ECDSA_P256_Signer(address: defaultAddress, keyIndex: 0, privateKey: defaultPrivateKey)
                             let signedTx = try await unsignedTx.signEnvelope(signers: [signer])
-
-                            let id = try await flow.sendTransaction(signedTransaction: signedTx)
-                            promise(.success(Flow.Address(hex: "f8d6e0586b0a20c7")))
+                            _ = try await flow.sendTransaction(signedTransaction: signedTx)
+                            
+                            promise(.success(defaultAddress))
                         } catch {
                             promise(.failure(AppError.plain(error.localizedDescription)))
                         }
