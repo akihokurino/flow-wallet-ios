@@ -1,4 +1,4 @@
-## Specs
+## Used, Dependency
 
 - swiftui
 - combine
@@ -6,7 +6,7 @@
 - flow ( https://ja.onflow.org/ )
 - flow-swift ( https://github.com/Outblock/flow-swift )
 
-## Done
+## Support
 
 - generate private key
 - get balance of flow
